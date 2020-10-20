@@ -1,0 +1,113 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# WeRateDogs Wrangle Report"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The purpose of this report is to illustrate the process of of gathering, assessing, and cleaning the data from WeRateDogs Twitter account."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Gathering Data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "There are 3 files that I needed to gather from three different sources,\n",
+    "they are as listed:\n",
+    "\n",
+    "    1. The WeRateDogs Twitter Enhanced Archive, which I was able to obtain straight from the Udacity Project page. This DataFrame is saved as twitter_archive.\n",
+    "    \n",
+    "    2. The Image Predictions tsv file which I was able to download programmatically through a given url. This DataFrame is saved as image_predictions.\n",
+    "    \n",
+    "    3. The tweet JSON file data, which was scraped after obtaining the Twitter API access. This DataFrame is saved as api_df."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Assessing Data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "I started by viewing all three DataFrames and see if I can find any errors visually right off the bat. After that I proceeded to view the information and data types regarding the charts and check for quality. Then I proceeded to check issues regarding data tidiness and from the list below I was able to identify the following issues:\n",
+    "\n",
+    "#### Quality:\n",
+    "1. All 3 DataFrames can be merged into a single DataFrame.\n",
+    "2. Timestamps can be changed into datetime datatype.\n",
+    "3. The denominators are inconsistent.\n",
+    "4. Remove columns that are irrelevant information or contains too little information.\n",
+    "5. Change p1, p2, and p3 into categorical data type.\n",
+    "6. Dog names contain errors that are not names.\n",
+    "8. Replaces all Null values with \"None\" across all columns.\n",
+    "10. the friend_counts, follower_counts, and status_counts column data looks \n",
+    "incorrect.\n",
+    "\n",
+    "#### Tidiness:\n",
+    "1. There are  4 dog life stage columns can be replaced with a single column.\n",
+    "2. Dog breed image predictions do not have uniform letter casing.\n",
+    "\n",
+    "\n",
+    "(note: the numbers here does not suggest the chronological order that I performed the cleaning, they're ordered based on grouping for quality and tidiness.)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Cleaning Data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "I proceeded to clean the data based on what should be done logically. For example it was easier to merge all 3 DataFrames in the first step so my future cleaning will be more effective and less error-prone. I focused on cleaning for quality first and tidiness close to the end. This way I can have valid data before looking to address structural issues."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
